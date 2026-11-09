@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+# Dataset is not committed: download from the Open University / UCI.
+data/raw/*
+!data/raw/.gitkeep
+outputs/*
+!outputs/.gitkeep
