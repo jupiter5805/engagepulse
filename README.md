@@ -74,3 +74,26 @@ not validated student-retention improvements.
 
 Next: temporal validation, Random Forest comparison,
 probability calibration and explainability.
+
+## Reproducing the ML Experiments
+
+EngagePulse uses the Open University Learning Analytics Dataset (OULAD) to study early indicators of student disengagement.
+
+### Run the Project
+
+1. Download OULAD and extract the CSV files into `data/raw/oulad/`.
+2. Install dependencies using `pip install -e '.[dev]'`.
+3. Run automated tests with `pytest -q`.
+4. Train the baseline model:
+
+   `python -m engagepulse.train --data-dir data/raw/oulad`
+
+5. Review the evaluation metrics in `outputs/metrics.json`.
+
+### Research Principles
+
+- Use only information available at the prediction date.
+- Separate training and evaluation data to reduce leakage.
+- Evaluate both predictive performance and practical usefulness.
+- Treat predictions as decision-support evidence, not automatic decisions about students.
+- Keep raw student data out of version control.
