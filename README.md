@@ -97,3 +97,53 @@ EngagePulse uses the Open University Learning Analytics Dataset (OULAD) to study
 - Evaluate both predictive performance and practical usefulness.
 - Treat predictions as decision-support evidence, not automatic decisions about students.
 - Keep raw student data out of version control.
+
+## Phase 3 — Explainable AI for Student Retention
+
+EngagePulse now includes model explainability to help
+understand the factors associated with student disengagement.
+
+### Key Features
+
+- Predict student risk using early learning activity.
+- Analyse engagement behaviour using machine learning.
+- Evaluate models using ROC-AUC and average precision.
+- Identify influential features using permutation importance.
+- Generate reproducible feature-importance reports.
+- Support transparent, research-led decision-making.
+
+### Generate Model Explanations
+
+Run:
+
+    python -m engagepulse.explain --data-dir data/raw/oulad
+
+Results are saved to:
+
+    outputs/feature_importance.json
+
+### Why Explainability Matters
+
+For universities, identifying potentially at-risk students
+is only part of the challenge.
+
+Understanding which observed engagement patterns are
+associated with model predictions can help researchers
+evaluate risk indicators and support academic staff.
+
+Permutation importance measures overall model reliance
+on features. It does not establish causation or explain
+an individual student's circumstances.
+
+### Development Roadmap
+
+- [x] Phase 1: Student risk prediction baseline
+- [ ] Phase 2: Temporal model comparison and validation
+- [x] Phase 3: Global model explainability
+- [ ] Phase 4: Probability calibration
+- [ ] Phase 5: Student engagement analytics dashboard
+- [ ] Phase 6: FastAPI model deployment
+
+This independent research project uses the Open University
+Learning Analytics Dataset (OULAD) and is designed to
+explore responsible, evidence-based student retention analytics.
