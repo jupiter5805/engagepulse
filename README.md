@@ -147,3 +147,46 @@ an individual student's circumstances.
 This independent research project uses the Open University
 Learning Analytics Dataset (OULAD) and is designed to
 explore responsible, evidence-based student retention analytics.
+
+## Phase 4 — Student Risk Probability Calibration
+
+EngagePulse evaluates how closely predicted student-risk probabilities align with observed outcomes.
+
+### Features
+
+- Compare original and calibrated ML predictions.
+- Evaluate probability reliability using Brier score.
+- Analyse predicted versus observed risk across probability bins.
+- Measure precision among the highest-risk students.
+- Generate reproducible calibration reports.
+- Support responsible interpretation of student-risk predictions.
+
+### Run Calibration
+
+    python -m engagepulse.calibration --data-dir data/raw/oulad
+
+For temporal model evaluation (if Phase 2 is complete):
+
+    python -m engagepulse.calibration --mode temporal --data-dir data/raw/oulad
+
+Results are saved to:
+
+    outputs/calibration_report.json
+
+### Research Considerations
+
+Calibration does not automatically improve model performance.
+Both calibrated and uncalibrated predictions are evaluated
+before selecting a model.
+
+Predictions are intended to support academic staff, not
+automatically determine student outcomes or interventions.
+
+### Development Progress
+
+- [x] Phase 1: Baseline ML model
+- [ ] Phase 2: Temporal model comparison
+- [x] Phase 3: Model explainability
+- [x] Phase 4: Probability calibration
+- [ ] Phase 5: Student engagement dashboard
+- [ ] Phase 6: FastAPI deployment
